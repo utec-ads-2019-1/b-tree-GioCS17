@@ -34,10 +34,8 @@ class BTree {
           Node * child=new Node(degree,tmp->isLeaf);
           child->numKeys=minDegree-1;
           int j;
-          for(j=0;j<minDegree-1;j++){
-            cout<<"\n Elemento a hijo derecho::"<<tmp->keys[j+minDegree];
+          for(j=0;j<minDegree-1;j++)
             child->keys[j]=tmp->keys[j+minDegree];
-          }
 
 
           tmp->numKeys=minDegree-1;
@@ -47,7 +45,6 @@ class BTree {
               child->childs[j]=tmp->childs[j+minDegree];
 
 
-          cout<<"\nKeys de father "<<father->numKeys<<" --"<<endl;
           for(j=father->numKeys;j>=i+1;j--)
             father->childs[j+1]=father->childs[j];
 
